@@ -10,7 +10,7 @@ For some of us, this topic will be researched and explored further in the near f
 
 ## Project Team:
 * Rupali Shah
-* Sara Rous
+* Sara Rouzbehani
 * Debbie Chan
 
 ## Datasets - for Academic Year 2015 - 2016 within the United States
