@@ -28,6 +28,8 @@ Data on the NCES site can be downloaded as a csv file or MS Access database.  Fo
 </p>
 
 ---
+Following three visualizations are sample visualization to be used with our dataset.
+
 <p align="center">
   <img width="600" height="400" src="Images/Scattergram.png">
 </p>
