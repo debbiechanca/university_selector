@@ -44,7 +44,7 @@ Data on the NCES site can be downloaded as a csv file or MS Access database.  Fo
 </p>
 
 ## Sketch of final design
-![Map visualization](Images/Project2_sketch.png)
+![Map visualization](Images/Project2_sketch.PNG)
 
 ### GitHub respository
 
