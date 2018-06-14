@@ -1,5 +1,4 @@
-
-
+import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy import create_engine, func, desc
 
@@ -21,7 +20,7 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/univ_map/latlondata")
+@app.route("/univ_map")
 def univ_map():
     location_data = {}
     univ_data = engine.execute('SELECT * FROM address_finances').fetchall()
