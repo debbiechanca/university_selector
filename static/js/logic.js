@@ -152,7 +152,7 @@ var icons = {
   // });
 });
 
-// Update the legend's innerHTML with the last updated time and station count
+// Update the legend's innerHTML with number of universities in each acceptance rate bucket.
 function updateLegend(acceptanceCount) {
   document.querySelector(".legend").innerHTML = [
     "<p class='q1_acceptance'>0-25% Acceptance Rate Count: " + acceptanceCount.Q1_ACCEPTANCE + "</p>",
