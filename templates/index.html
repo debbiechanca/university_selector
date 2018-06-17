@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>University Selector</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+  <!-- Icons -->
+<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="./static/css/leaflet.extra-markers.min.css">
+<!-- Icons -->
+ <script src="./static/leaflet.extra-markers.min.js"></script>
+ <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+  <!-- D3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+  <!-- chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+</head>
+
+<body>
+  <!-- navbar    -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">University Selector</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Project</a></li>
+        <li><a href="#">Map</a></li>
+        <li><a href="#">Univercity Tree</a></li>
+        <li><a href="#">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- Map - map Layers: marker shows acceptance rate  and the size of marker would be according to acceptance rate
+  +pop up for the address and website Debbie -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div  id="map-id">
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies
+            lacus sed turpis tincidunt id. Vulputate enim nulla aliquet porttitor lacus
+            luctus accumsan tortor.luctus accumsan tortor.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies
+            lacus sed turpis tincidunt id. Vulputate enim nulla aliquet porttitor lacus
+            luctus accumsan tortor.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies
+            lacus sed turpis tincidunt id. Vulputate enim nulla aliquet porttitor lacus
+            luctus accumsan tortor. </h3>
+          </div>
+        </div>
+
+
+        <!-- dropdown to choose  Sara -->
+
+        <div class="col-md-4">
+          <div class='container'>
+            <div class="row">
+              <div class="col-sm-12">
+                <h2>Major and State</h2>
+                <h3>Please Choose a State</h3>
+                <!-- dropdown -->
+                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+              </div>
+            </div>
+          </div>
+          <!-- checkbox   -->
+          <div class='container'>
+            <div class="row">
+              <div class="col-sm-12">
+                <h3>Please Choose a Major</h3>
+                <div id = "myRadios" class="col-sm-12">
+
+                </div>
+                <input type="submit" value="submit" onclick="btnSubmit()" />
+              </div>
+
+              <!-- List  -->
+              <div class='container'>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="panel panel-info">
+                      <div class="panel-heading">List of universities</div>
+                      <ul id=sampleList></ul>
+                      <div class="panel-body"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- list of Universities :10 Universities sorted by acceptance rate , shows the university logo next to it
+        Sara -->
+        <!-- <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+        <span class="border border-primary">
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies
+        lacus sed turpis tincidunt id. Vulputate enim nulla aliquet porttitor lacus
+      </h3>
+    </span>
+    <span class="border border-secondary"></span>
+  </div>
+</div>
+</div> -->
+<!-- the part that will appear after clicking on show -->
+
+<!--  Chart with all data  : count of universities by acceptance rate with the 10 bins and bar chart + table that pops
+up when we click on bars Rupali/ Debbie / Sara -->
+
+
+<!-- Dashboard  -->
+<!-- 1st chart : demographic data : gender,Ethnicity, age ,etc  Sara -->
+
+<div class="container">
+  <div id="chartContainer" class="row">
+    <h3> Demographic</h3>
+    <canvas id="DemoChart"></canvas>
+  </div>
+</div>
+
+  <!-- 1st chart : demographic data : gender,Ethnicity, age ,etc  Sara -->
+  <div>
+    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies
+      lacus sed turpis tincidunt id. Vulputate enim nulla aliquet porttitor lacus
+      luctus accumsan tortor. </h3>
+    </div>
+
+    <!-- 2nd chart :Financial aid + tuition+ percentage of tuition can be in financial aid  Debbie  bar + line -->
+    <div>
+      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies
+        lacus sed turpis tincidunt id. Vulputate enim nulla aliquet porttitor lacus
+        luctus accumsan tortor. </h3>
+      </div>
+
+
+      <!--- 3rd :  collapsable tree  for everythin : Rupali -->
+      <div>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies
+          lacus sed turpis tincidunt id. Vulputate enim nulla aliquet porttitor lacus
+          luctus accumsan tortor. </h3>
+        </div>
+
+        <script type="text/javascript" src="../static/app.js"></script>
+
+
+        <body>
