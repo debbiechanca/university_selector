@@ -607,7 +607,7 @@ d3.json(url, function (err, universityData) {
     univData.out_of_state_tuition = +univData.out_of_state_tuition;
   });
 
-  var margin = {top: 20, right: 30, bottom: 30, left: 30},
+  var margin = {top: 50, right: 20, bottom: 70, left: 90},
   width = 960 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
 
@@ -635,8 +635,8 @@ d3.json(url, function (err, universityData) {
 
   console.log("This is x(0):",x(0));
 
-
   var formatCount = d3.format(",.0f");
+  
   // Generate a histogram using ten uniformly spaced bins
   var data = d3.histogram()
   .thresholds(10)
@@ -657,7 +657,6 @@ d3.json(url, function (err, universityData) {
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
 
   var bar = svg.selectAll(".bar")
   .data(data)
@@ -687,33 +686,33 @@ d3.json(url, function (err, universityData) {
   .attr("transform", "translate(0," + height + ")")
   .call(xAxis);
 
-  //     //Create tooltip in the chart
-  //     chartGroup.call(toolTip);
+  svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "18px")   
+        .style("font-type", "Helvetica")
+        .attr("fill", "green")
+        .text("Number of Universites vs Acceptance Rate");
 
-  //     //Create event listeners to display and hide the tooltip
-  //     barsGroup.on("click", function (data) {
-  //     toolTip.show(data);
-  //     })
+    svg.append("text")
+    .attr("transform",`translate(${width / 2}, ${height + margin.top + 2})`)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "16px")
+    .attr("font-type", "Helvetica")
+    .attr("fill", "green")
+    .text("Acceptance Rate");
 
-  //     labelGroup.on("click", function(data){
-  //     toolTip.show(data);
-  //     })
-
-  //   //onmouseout event
-  //   .on("mouseout", function (data, index) {
-  //     toolTip.hide(data);
-  //   });
-});
-
-
-
-
-
-
-
-
-
-
+    svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 80 - margin.left)
+    .attr("x", 0 - (height / 2))
+    .attr("dy", "1em")
+    .attr("font-size", "16px")
+    .attr("font-type", "Helvetica")
+    .attr("fill", "green")
+    // .classed("axis-text", true)
+    .text("Number of Universities");
 
 buildMap();
 stateTable();
