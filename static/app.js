@@ -616,8 +616,6 @@ d3.json(url, function (err, universityData) {
   // .domain(d3.extent(universityData, d => d.acceptance_rate))
   // .range([0, width]);
 
-
-
   values =  [];
   for (var i = 0; i< universityData.length; i++){
     data = universityData[i];
@@ -625,7 +623,6 @@ d3.json(url, function (err, universityData) {
     values.push(value);
   }
   console.log(values);
-
 
   var max = d3.max(values);
   var min = d3.min(values);
@@ -636,7 +633,7 @@ d3.json(url, function (err, universityData) {
   console.log("This is x(0):",x(0));
 
   var formatCount = d3.format(",.0f");
-  
+
   // Generate a histogram using ten uniformly spaced bins
   var data = d3.histogram()
   .thresholds(10)
@@ -713,7 +710,7 @@ d3.json(url, function (err, universityData) {
     .attr("fill", "green")
     // .classed("axis-text", true)
     .text("Number of Universities");
-
+});
 buildMap();
 stateTable();
 majorTable();
