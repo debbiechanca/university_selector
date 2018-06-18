@@ -24,6 +24,9 @@ Data on the NCES site was downloaded as a csv file with final dataset loaded int
 ### Visualizations
 
 #### Interactive map of all universities within the United States and Puerto Rico by acceptance rate created using Leaflet.
+
+The map shows all the undergraduate colleges and universities available in the US and Puerto Rico as of academic year 2015-2016. As an overview, the right side of the US is heavily concentrated with colleges and universities.  There is a breakdown of 25% increments with acceptance rate shown in each of the four layers.  This can be controlled with the map control panel to focus in on one of the acceptance brackets as well as zooming into an area of interest.
+
 <p align="center">
   <img width="600" height="400" src="Images/map_all_universities.PNG">
 </p>
@@ -46,7 +49,7 @@ This visualization was created to show the cost of tuition and the average amoun
 ---
 
 #### Grouping of all universities by acceptance rate using d3.js
-The chart shows how many universities are available to students based on the level of difficulty to get admitted. Universities with an acceptance rate of 40% or lower represent 10% of the total number of universities.  80% of the universities, which is almost 1500 universities, have an acceptance rate of 1 in 2.
+The histogram chart shows how many universities are available to students based on the level of difficulty to get admitted. Universities with an acceptance rate of 40% or lower represent 10% of the total number of universities.  80% of the universities, which is almost 1500 universities, have an acceptance rate of 1 in 2.
 
 <p align="center">
   <img width="600" height="400" src="Images/histogram.png">
