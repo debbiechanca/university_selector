@@ -591,10 +591,7 @@ function TuitionChart(filteredData, numberOfBars) {
 
 }
 
-
-
-
-var color = "steelblue"
+var color = "lightgreen"
 var url = "/univ_map";
 
 // Import Data
