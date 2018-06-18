@@ -25,13 +25,13 @@ Data on the NCES site was downloaded as a csv file with final dataset loaded int
 
 #### Interactive map of all universities within the United States and Puerto Rico by acceptance rate created using Leaflet.
 <p align="center">
-  <img width="600" height="400" src="Images/map_all_universities.png">
+  <img width="600" height="400" src="Images/map_all_universities.PNG">
 </p>
 
 ---
 #### Interactive stacked bar chart based on filtered data by state and major field created using chart.js.
 <p align="center">
-  <img width="600" height="400" src="Images/demographic_chart.png">
+  <img width="600" height="400" src="Images/demographic_chart.PNG">
 </p>
 
 ---
@@ -40,7 +40,7 @@ Data on the NCES site was downloaded as a csv file with final dataset loaded int
 This visualization was created to show the cost of tuition and the average amount that can be covered with grants and financial aid.  Cost is normally one of the determining factors in choosing a university.  Once a smaller list has been determined, cost and financial aid comparison would be helpful in narrowing down the list of candidates even more.
 
 <p align="center">
-  <img width="600" height="400" src="Images/tuition_finaid_chart.png">
+  <img width="600" height="400" src="Images/tuition_finaid_chart.PNG">
 </p>
 
 ### Built With
