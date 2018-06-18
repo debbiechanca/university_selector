@@ -49,7 +49,7 @@ This visualization was created to show the cost of tuition and the average amoun
 The chart shows how many universities are available to students based on the level of difficulty to get admitted. Universities with an acceptance rate of 40% or lower represent 10% of the total number of universities.  80% of the universities, which is almost 1500 universities, have an acceptance rate of 1 in 2.
 
 <p align="center">
-  <img width="600" height="400" src="Images/histogram.PNG">
+  <img width="600" height="400" src="Images/histogram.png">
 </p>
 
 ---
