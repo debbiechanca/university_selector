@@ -1,7 +1,7 @@
 # Colleges and Universities - Which is the right place?
 
 <p align="center">
-  <img width="500" height="300" src="Images/higher_ed.jpg">
+  <img width="700" height="350" src="Images/higher_ed.jpg">
 </p>
 
 With so many good colleges and universities out there, which is the best fit for you and your student?  There are many criteria to look at such as tuition in-state and out-of-state, acceptance rate, location, financial aid, etc.  With this project, we will explore some of these factors to help with reaching an intelligent decision.
@@ -37,18 +37,28 @@ Data on the NCES site was downloaded as a csv file with final dataset loaded int
 ---
 #### Interactive combination chart of bar and lines to compare tuition and financial aid by universities  based on filtered data by state and major field created using plotly.js.
 
-This visualization was created to show the cost of tuition and the average amount that can be covered with grants and financial aid.  Cost is normally one of the determining factors in choosing a university.  Once a smaller list has been determined, cost and financial aid comparison would be helpful in narrowing down the list of candidates even more.
+This visualization was created to show the cost of tuition and the average amount that can be possibly covered with grants and loans.  Cost is normally one of the determining factors in choosing a university.  With a shorter list, cost and financial aid comparison would be helpful in narrowing down the list of candidates even more.
 
 <p align="center">
   <img width="600" height="400" src="Images/tuition_finaid_chart.PNG">
 </p>
 
+---
+
+#### Grouping of all universities by acceptance rate using d3.js
+The chart shows how many universities are available to students based on the level of difficulty to get admitted. Universities with an acceptance rate of 40% or lower represent 10% of the total number of universities.  80% of the universities, which is almost 1500 universities, have an acceptance rate of 1 in 2.
+
+<p align="center">
+  <img width="600" height="400" src="Images/histogram.PNG">
+</p>
+
+---
+
 ### Built With
 
 * Database - SQLite
-* Visualizations - Leaflet, chart.js, plotly.js
+* Visualizations - D3, Leaflet, chart.js, plotly.js
 * Framework - Flask
-
 
 ### GitHub respository
 
