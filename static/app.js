@@ -335,7 +335,7 @@ function btnSubmit(){
     return b[0].acceptance_rate - a[0].acceptance_rate;
   });
 
-  console.log(filteredData);
+  // console.log(filteredData);
   $(sampleList).empty();
   var myList = document.getElementById('sampleList');
   // var labels=[];
@@ -416,8 +416,7 @@ if (filteredData.length<10) {
 
 // console.log(AfricanAmericanTotal);
 
-
-
+  TuitionChart(filteredData, numberOfBars);
 
   }
   // Here you can use filteredData to plot different charts
@@ -500,8 +499,97 @@ if (filteredData.length<10) {
 
 
 //
+function TuitionChart(filteredData, numberOfBars) {
 
+  var data;
 
-// buildMap();
+  var name_array = [];
+  var in_tuition_array = [];
+  var out_tuition_array = [];
+  var grants_array = [];
+  var loans_array = [];
+
+  // Loop through the majors data 
+  for (var i = 0; i < numberOfBars; i++) {
+
+   data = filteredData[i][0];
+
+    data.in_state_tuition = +data.in_state_tuition;
+    data.out_of_state_tuition = +data.out_of_state_tuition;
+    data.ave_amt_grant_aid = +data.ave_amt_grant_aid;
+    data.ave_amt_stu_loan = +data.ave_amt_stu_loan;
+
+    name_array.push(data.name);
+    in_tuition_array.push(data.in_state_tuition);
+    out_tuition_array.push(data.out_of_state_tuition);
+    grants_array.push(data.ave_amt_grant_aid);
+    loans_array.push(data.ave_amt_stu_loan);
+
+  }
+
+  var trace1 = {
+    x: name_array,
+    y: in_tuition_array,
+    name: 'Tuition',
+    marker: {
+      // color: 'rgb(55, 83, 109)',
+      color: 'rgb(106,90,205)', 
+      opacity: 0.7
+      },
+    type: 'bar',
+    text: in_tuition_array,
+    textposition: 'auto',
+    hoverinfo: 'none'
+    };
+
+    var trace2 = {
+    // x: [0, 1, 2, 3, 4, 5], 
+      x: name_array,
+      y: grants_array, 
+      name: 'Grants',
+      marker: {color: 'rgb(50,205,50)'},
+      type: 'scatter'
+    };
+
+    var trace3 = {
+      x: name_array,
+      y: loans_array, 
+      name: 'Loans',
+      marker: {color: 'rgb(255,165,0)'},
+      type: 'scatter'
+    };
+
+    var data = [trace1, trace2, trace3];
+
+    var layout = {
+      title: 'Tuition and Financial Aid Comparison by Universities',
+      xaxis: {
+        title: 'US Universities',
+        titlefont: {
+          family: 'Helvetica',
+          size: 18,
+          color: '#000000'
+        },
+        tickfont: {
+        family: 'Old Standard TT, serif',
+        size: 9,
+        color: 'black'
+        },
+      },
+      yaxis: {
+        title: 'Average Tuition vs. Grants and Loans (USD)',
+        titlefont: {
+          family: 'Helvetica',
+          size: 18,
+          color: '#000000'
+          }
+        }
+      };
+
+    Plotly.newPlot('tuition_chart', data, layout);
+
+}  
+
+buildMap();
 stateTable();
 majorTable();
