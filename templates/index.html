@@ -39,6 +39,7 @@
             <li> <a id="demo" href="#chartContainer" target="_self"> Demographic Information</a> </li>
             <li> <a id="financial" href="#tuition_chart" target="_self"> Financial Information </a> </li>
             <li> <a id="acceptance" href="#acceptance_chart" target="_self"> Acceptance Rate </a> </li>
+            <li> <a id="tree" href="#treeContainer" target="_self"> Admissions Criteria </a> </li>
           </ul>
         </nav>
       </div>
@@ -118,7 +119,18 @@
 
 
 <!-- Dashboard  -->
-<!-- 1st chart : demographic data : gender,Ethnicity, age ,etc  Sara -->
+
+<!-- 1st chart : collapsible tree : admissions criteria -->
+<div class="container">
+  <div id="treeContainer" class="row">
+    <h3>Admissions Criteria</h3>
+    <canvas id="tree"></canvas>
+  </div>
+</div>
+
+<br>
+
+<!-- 2nd chart : demographic data : gender,Ethnicity, age ,etc  Sara -->
 
 <div class="container">
   <div id="chartContainer" class="row">
@@ -129,16 +141,17 @@
 
 <br>
 
-<!-- 2nd chart : Combo chart of bar and line chart comparing tuition and financial aid (grants and loans) by universities. Debbie -->
+<!-- 3rd chart : Combo chart of bar and line chart comparing tuition and financial aid (grants and loans) by universities. Debbie -->
 <div id="tuition_chart" class="row">
 </div>
 
 <br>
 
-<!--- 3rd : Histogram Acceptance Rate : Rupali -->
+<!--- 4th : Histogram Acceptance Rate : Rupali -->
 <div id="acceptance_chart" class="row">
 </div>
 
+<br>
 <script type="text/javascript" src="../static/app.js"></script>
 
 
